@@ -13,8 +13,11 @@ class User {
 
     async create(data) {
         const all = await this.all()
-        all.push(data)
 
+        const existsID = all.find(( { id } ) => id === data.id)
+        if (existsID) return `[!] User already exists!` 
+
+        all.push(data)
         await writeFile(this.file, JSON.stringify(all, null, 4))
 
         return {
@@ -49,22 +52,22 @@ class User {
             updated: true
         }
     }
-    async atualizar(id, atualizacoes) {
-        const dados = await this.obterArquivo();
-        const indice = dados.findIndex(item => item.id === parseInt(id));
-        if (indice === -1) {
-          throw Error('heroi não existe!');
+    
+    async remove(userID) {
+        const all = await this.all()
+
+        const userIndex = all.findIndex(({ id }) => id === userID)
+
+        if (userIndex === -1) return `[!] UserID ${userID} not found!`
+
+        all.splice(userIndex, 1)
+
+        await writeFile(this.file, JSON.stringify(all, null, 4))
+
+        return {
+            removed: true
         }
-    
-        const atual = dados[indice];
-        dados.splice(indice, 1);
-    
-        //workaround para remover valores undefined do objeto
-        const objAtualizado = JSON.parse(JSON.stringify(atualizacoes));
-        const dadoAtualizado = Object.assign({}, atual, objAtualizado);
-    
-        return await this.escreverArquivo([...dados, dadoAtualizado]);
-      }
+    }
 }
 
 module.exports = User

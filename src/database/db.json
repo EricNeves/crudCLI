@@ -1,32 +1,12 @@
 [
     {
-        "id": 1146933403077,
+        "id": 610332285904,
         "username": "Dominique",
         "email": "dominique@crud.com"
     },
     {
-        "id": 1146933403033,
-        "username": "Eric Neves",
-        "email": "ericnevesr@gmail.com"
-    },
-    {
-        "id": 1581743577890,
+        "id": 327994704133,
         "username": "Dominique",
         "email": "dominique@crud.com"
-    },
-    {
-        "id": 574819594773,
-        "username": "Dominique",
-        "email": "dominique@crud.com"
-    },
-    {
-        "id": 52614353172,
-        "username": "Dominique",
-        "email": "dominique@crud.com"
-    },
-    {
-        "id": 1,
-        "username": "Eric Neves",
-        "email": "ericnevesr@gmail.com"
     }
 ]

@@ -1,7 +1,7 @@
 const User = require('./src/entities/User')
 const path = require('path')
 
-const { deepEqual, ok } = require('assert')
+const { deepEqual } = require('assert')
 const { 
     DEFAULT_LIST, DEFAULT_ADD
 } = require('./test.default')
@@ -11,6 +11,10 @@ const user = new User({
 })
 
 describe('CRUD CLI Test', () => {
+    before(async () => {
+        await user.create(DEFAULT_LIST)
+    })
+
     it('Should list all users', async () => {
         const expected = []
 
@@ -39,6 +43,14 @@ describe('CRUD CLI Test', () => {
         const expected = { updated: true }
 
         const result = await user.edit(DEFAULT_LIST.id)
+
+        deepEqual(result, expected)
+    })
+
+    it('Should remove user by ID', async () => {
+        const expected = { removed: true }
+
+        const result = await user.remove(DEFAULT_LIST.id)
 
         deepEqual(result, expected)
     })
