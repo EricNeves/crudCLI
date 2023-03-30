@@ -11,11 +11,14 @@ const user = new User({
 program
     .version('v1')
     .description(
-    "[+] Create: node src/index.js -C -N Eric -E ericnevesr@gmail.com \n"+
-    "[+] List all: node src/index.js -A \n"+
-    "[+] List by ID: node src/index.js -L -I 123 \n"+
-    "[+] Edit: node src/index.js -U -I 123 -N ericnevesr -E ericnevesr@gmail.com \n"+
-    "[+] Remove: node src/index.js -R -I 123"
+    "Author: \x1b[44m Eric Neves \x1b[0m \n"+
+    "Github: \x1b[44m github.com/ericneves \x1b[0m \n\n"+
+    
+    "\x1b[33m[+] Create: \x1b[0m \x1b[32m     node src/index.js -C -N Eric -E ericnevesr@gmail.com \x1b[0m \n"+
+    "\x1b[33m[+] List all: \x1b[0m \x1b[32m   node src/index.js -A \x1b[0m \n"+
+    "\x1b[33m[+] List by ID: \x1b[0m \x1b[32m node src/index.js -L -I 123 \x1b[0m \n"+
+    "\x1b[33m[+] Edit: \x1b[0m \x1b[32m       node src/index.js -U -I 123 -N ericnevesr -E ericnevesr@gmail.com \x1b[0m \n"+
+    "\x1b[33m[+] Remove: \x1b[0m \x1b[32m     node src/index.js -R -I 123\x1b[0m"
     )
     
     // List all users
