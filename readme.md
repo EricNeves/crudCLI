@@ -20,6 +20,9 @@ $ git clone https://github.com/EricNeves/crudCLI.git
 # Install Dependencies
 $ cd crudCLI && npm install
 
+#test
+$ npm test
+
 # Help
 $ npm start
 # List all users
