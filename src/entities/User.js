@@ -12,7 +12,14 @@ class User {
     }
 
     async create(data) {
-        
+        const all = await this.all()
+        all.push(data)
+
+        await writeFile(this.file, JSON.stringify(all, null, 4))
+
+        return {
+            created: true
+        }
     }
 }
 

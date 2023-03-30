@@ -1,18 +1,14 @@
-const { deepEqual, ok } = require('assert')
-
 const User = require('./src/entities/User')
-const id   = require('./src/utils/generateID')
 const path = require('path')
+
+const { deepEqual, ok } = require('assert')
+const { 
+    DEFAULT_LIST, DEFAULT_ADD
+} = require('./test.default')
 
 const user = new User({
     file: path.resolve(__dirname, './src/database/db.json')
 })
-
-const DEFAULT_LIST = { 
-    id: 1, 
-    username: 'Eric Neves', 
-    email: 'ericnevesr@gmail.com' 
-}
 
 describe('CRUD CLI Test', () => {
 
@@ -22,6 +18,14 @@ describe('CRUD CLI Test', () => {
         const result = await user.all()
 
        deepEqual(result[0], expected)
+    })
+
+    it('Should create a new user', async () => {
+        const expected = { created: true }
+
+        const result = await user.create(DEFAULT_ADD)
+
+        deepEqual(result, expected)
     })
 
 })
