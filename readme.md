@@ -19,14 +19,11 @@
 
 #### Ferramentas 🛠
 
-   * HTML5
-   * CSS3
-   * Javascript
-     * QRCode
    * NodeJS
-     * Express
-     * Webpack
-     * Babel
+     * Path
+     * FS (fs/promises)
+     * CommanderJS
+     * MochaJS
 
 #### License
 
