@@ -14,6 +14,24 @@
 #### Executando ⚙️
 
 ```sh
+# Clone
+$ git clone https://github.com/EricNeves/crudCLI.git
+
+# Install Dependencies
+$ cd crudCLI && npm install
+
+# Help
+$ npm start
+# List all users
+$ node src/index.js -A
+# Create a new user
+$ node src/index.js -C -N ericneves -E ericnevesr@gmail.com
+# List user by ID
+$ node src/index.js -L -I 123
+# Edit user by ID
+$ node src/index.js -U -I 123 -N eric -E eric@crud.com
+# Delete user by ID
+$ node src/index.js -R -I 123
 
 ```
 
