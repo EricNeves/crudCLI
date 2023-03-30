@@ -1,0 +1,17 @@
+{
+  "name": "crudcli",
+  "version": "1.0.0",
+  "description": "CRUD CLI",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "npx mocha ."
+  },
+  "keywords": [],
+  "author": "Eric Neves <ericnvesr@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.22"
+  }
+}
