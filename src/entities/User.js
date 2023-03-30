@@ -30,6 +30,7 @@ class User {
         if (!userID) return all
 
         const user = all.find(({ id }) => id === userID)
+        if(!user) return `[!] UserID ${userID} not found!`
 
         return user
     }
